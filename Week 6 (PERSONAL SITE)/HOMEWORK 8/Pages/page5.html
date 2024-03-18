@@ -1,0 +1,55 @@
+<html>
+<title>Contact Me!</title>
+<head>
+    <script>
+
+         function getData()
+        {
+            var name = document.getElementById("txtName").value;
+            var email = document.getElementById("txtEmail").value;
+
+            window.alert("You have submitted following information: " + name + email);
+        }
+
+    </script>
+    <style> 
+    input:invalid:required {
+        border: 2px dashed red;
+    }
+
+    input:valid {
+        border: 2px solid black;
+    }
+
+        span {text-align: center;
+            font-size: larger;}
+    </style>
+    <link rel="stylesheet" type="text/css" href="./styles/css/bootstrap.min.css">
+</head>
+<body>
+    <span><h1>Have Questions? Send me an email!</h1>
+    <p>*By filling out this form and clicking the 'Submit!' button, you are agreeing to allow us to know your 'Name' and 'Email', and allow us to send you emails in turn. 
+        <br>Your information will not be sold to third parties</br>
+        <br>If you do not agree to these terms, please do not submit your information.</br>
+    </p>
+    <br>
+<table name="myTable" onsubmit="return validateForm()">
+    <tr>
+        <td>Name:</td>
+        <td><input type="text" id="txtName" required></td>
+    </tr>
+    <tr>
+        <td>Email Address:</td>
+        <td><input type="text" id="txtEmail" required></td>
+    </tr>
+    <tr><td colspan="2"><button id="btnSubmit" onClick="getData();">Submit!</button></td></tr>
+</table>
+</span>
+
+
+
+    <a href="index.html" style="text-decoration:none" target="_new">Let's Go Home!</a> | <a href="page2.html" style="text-decoration:none" target="_new">Puppy Please!</a> | <a href="page3.html" style="text-decoration:none" target="_new">Gaming Time!</a>
+
+</body>
+
+</html>
