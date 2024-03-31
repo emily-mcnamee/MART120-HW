@@ -9,8 +9,7 @@
 function draw() {
   
   background(220);
-  
-   background(147,204,234)
+  background(147,204,234)
   
   // head
   strokeWeight(3)
@@ -18,11 +17,12 @@ function draw() {
   circle(200,180,150)
       line(150, 200, 195, 220)
        line(215, 220, 250, 196)
+  fill(0,150,225)
     arc(230, 155, 15, 60, 150, PI + QUARTER_PI, CHORD)
   arc(175, 155, 15, 60, 150, PI + QUARTER_PI, CHORD)
 
   // fingers
-
+fill(225)
   line(100, 245, 115, 225)
    line(100, 215, 110, 190)
    line(96, 215, 98, 190)
@@ -35,19 +35,24 @@ function draw() {
    rect(120, 263, 35, 85, 20);
   rect(85, 263, 25, 95, 20);
   arc(120, 370, 30, 30, 100, PI + HALF_PI);
-
- 
   
-  //trunk
+    //trunk
   rect(158, 255, 90, 150, 20);
-  fill(175)
+  fill(210)
   triangle(145, 330, 203, 259, 260, 330);
   
   // nose
   strokeWeight(4)
   point(203, 205);
-
-
+  
+  // text
+  fill(0)
+  textSize(32)
+  text('Greetings', 10, 50)
+  
+  fill(0,0,225)
+  textSize(11)
+  text('Emily (Quinn) McNamee', 287, 400)
 }
         </script>
     </head>
