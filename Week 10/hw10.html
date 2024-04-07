@@ -1,0 +1,109 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
+    <script>
+        
+    var colorGray = 225;
+var txt = 32;
+// var txt is the starting font size of title (line 87).
+
+var x = 120;
+var y2 = 220;
+// var x is used twice in //arms (line 68, 70).
+//var y2 is used twice in //head. It affects a y coordinate and a y2 coordinate (line 39, 40).
+
+var dgx = 175;
+var dgy = 155;
+// these variables are for the diagonal movement (line 43)
+
+var movement;
+var movement2;
+// these are used for two different movement speeds.
+
+function setup() {
+  createCanvas(400, 400);
+  // movement calculations + txtsize multiplier
+    movement = floor(random() * 10) + 1;
+    movement2 = floor(random() * 10) + 1;
+  mlt = (txt + 2 )
+}
+
+function draw() {
+  
+  background(220);
+  background(147,204,234);
+  
+  // head
+  strokeWeight(3);
+  fill(colorGray);
+  circle(200,180,150);
+      line(150, 200, 195, y2);
+       line(215, y2, 250, 196);
+  fill(0,150,225);
+    arc(230, 155, 15, 60, 150, PI + QUARTER_PI, CHORD);
+  arc(dgx, dgy, 15, 60, 150, PI + QUARTER_PI, CHORD);
+  if(dgx >=200 || dgx <=0)
+    {
+      movement *= -1
+    }
+  if(dgy >=200 || dgy <=0)
+    {
+      movement2 *= -1
+    }
+   if(y2 >= 400 || y2 <= 0)
+    {
+       movement2 *= -1;
+    }
+
+  // fingers
+fill(colorGray)
+  line(100, 245, 115, 225);
+   line(100, 215, 110, 190);
+   line(96, 215, 98, 190);
+  line(90, 215, 94, 190);
+   arc(95, 225, 20, 45, 175, PI + QUARTER_PI, CHORD);
+  
+  //arms
+  fill(0,49,83)
+   rect(249, 263, 35, 150, 20);
+   rect(x, 263, 35, 85, 20);
+  rect(85, 263, 25, 95, 20);
+  arc(x, 370, 30, 30, 100, PI + HALF_PI);
+  if(x >= 400 || x <= 0)
+    {
+       movement *= -1;
+    }
+  
+    //trunk
+  rect(158, 255, 90, 150, 20);
+  fill(210)
+  triangle(145, 330, 203, 259, 260, 330);
+  
+  // nose
+  strokeWeight(4);
+  point(203, 205);
+  
+  // text
+  fill(0);
+  textSize(txt);
+  text('Greetings', 10, 50);
+  if(txt >= 170 || txt <= 5)
+   {
+     mlt *= -1;
+   }
+  // 5(32+2) = 170
+   
+  fill(0,0,225);
+  textSize(10.5);
+  text('Emily (Quinn) McNamee', 287, 400);
+  
+  txt += mlt
+  dgy += movement2;
+  dgx += movement;
+  x += movement;
+  y2 += movement2;
+}
+
+</script>
+</head>
+</html>
