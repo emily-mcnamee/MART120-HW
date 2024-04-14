@@ -1,0 +1,173 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
+        <script>
+             // x and y for my character
+var cX = 250;
+var cY = 50;
+
+// define the key codes for each letter
+var w = 87; 
+var s = 83;
+var a = 65;
+var d = 68;
+
+// enemy variables
+//rectangle enemy variables
+var rect1x = 0;
+var rect2x = 390;
+//circle enemy varbiables
+ C1x = 30
+ C1y = 50
+ C2x = 30
+ C2y = 50
+
+// mouse click variables
+
+var x = 50;
+var y = 50;
+
+   // width = 500
+    // height = 600
+
+// speeds for enemies
+  shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 10)) + 1);
+    shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 10)) + 1);
+
+  SshapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 10)) + 1);
+  SshapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 10)) + 1);
+
+
+
+function setup() 
+{
+  createCanvas(500, 600);
+}
+
+function draw() {
+  
+  background(228,246,248);
+  stroke(0);
+  fill(0);
+  
+  createBorders();
+  
+  //Character
+  circle(cX,cY,25);
+  characterMovement();
+  
+  //mouse click 
+  circle(x, y, 25);
+  
+  // enemy rectangles
+  rect(rect1x, 100, 100 ,10 )
+  if(rect1x >= 400 || rect1x <= -1)
+  {
+   shapeXSpeed*=-1;
+  }
+  rect1x += shapeXSpeed
+  
+  rect(rect2x, 450, 100, 10) 
+  if(rect2x >= 400 || rect2x <= -1)
+  {
+   shapeYSpeed*=-1;
+  }
+  rect2x += shapeYSpeed;
+
+  
+  // circle enemies
+  //orange circle
+  fill(225,165,0);
+  stroke(228,246,248);
+  circle(C1x, C1y, 20);
+  C1x += shapeXSpeed;
+  C1y += shapeYSpeed;
+  if(C1x > width)
+  {
+        C1x = 0;
+  }
+    if(C1x < 0)
+  {
+        C1x = width;
+  }
+    if(C1y > height)
+  {
+        C1y = 0;
+  }
+    if(C1y < 0)
+  {
+        C1y = height;
+  }
+// pink circle
+  fill(255,192,203);
+  circle(C2x,C2y, 20);
+   C2x += SshapeXSpeed;
+  C2y += SshapeYSpeed;
+  if(C2x > width)
+  {
+        C2x = 0;
+  }
+    if(C2x < 0)
+  {
+        C2x = width;
+  }
+    if(C2y > height)
+  {
+        C2y = 0;
+  }
+    if(C2y < 0)
+  {
+        C2y = height;
+  }
+  
+  }
+
+  function characterMovement(){
+    if(keyIsDown(w))
+    {
+        cY -= 5;   
+    }
+    if(keyIsDown(s))
+    {
+        cY += 5;   
+    }
+    if(keyIsDown(a))
+    {
+        cX -= 5;   
+    }
+    if(keyIsDown(d))
+    {
+        cX += 5;   
+    }
+    
+     // check to see if the character has left the exit
+    if(cX >= 100 && cY > height)
+    {
+        fill(0);
+        stroke(5);
+        textSize(26);
+        text("You Win!", width/2-50, height/2-50);
+    }
+  }
+  
+
+
+  function createBorders(){
+  //top
+  rect(0,0,width,10)
+  //left
+   rect(0,0,10,height)
+  //bottom
+ rect(0, height-10,width-350, 10);
+  rect(350, height-10, width-350, 10);
+  //right
+  rect(width-10,0,10,height);
+}
+
+  function mousePressed(){
+        x = mouseX;
+        y = mouseY;
+    }
+        </script>
+    </head>
+</html>
