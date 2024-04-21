@@ -1,0 +1,1 @@
+This folder contains the Week 12 hw; more practice with functions and turning all of last week's game mechanics into functions
