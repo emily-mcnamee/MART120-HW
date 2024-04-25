@@ -1,0 +1,125 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
+
+    <script>
+        var movement = 1;
+        var angle = 0;
+        var tY = -250;
+
+function setup() {
+    var cnv = createCanvas(windowWidth, windowHeight, WEBGL);
+    var x = (windowWidth - width) / 2;
+    var y = (windowHeight - height) / 2;
+    cnv.position(x, y);
+    
+}
+
+function draw()
+{
+    pointLight(0, 0, 255, 0, -1000, 50);
+
+    pointLight(225,225,225, 0 , 1000, 50);
+//Lighting and Color will be fully implemented near the end of the project
+
+    background(100);
+
+    centerMoving();
+
+    ortho();
+   
+push();
+
+    ambientMaterial(255);
+
+    //Put translate() BEFORE rotate 
+
+push();
+    translate(0, tY, -50);
+
+    push();
+    sphere(100);
+    pop();
+
+    push();
+    rotateY(angle);
+    rotateX(angle);
+    rotateZ(angle);
+    torus(150, 10);
+    pop();
+
+    push();
+    rotateY(angle*-2);
+    rotateX(angle*-0.5);
+    rotateZ(angle*-0.5);
+    torus(150,10);
+    pop();
+pop();
+
+push();
+
+    translate(0, -250, -50);
+
+    push();
+    rotateY(angle);
+    torus(700, 10);
+    pop();
+
+    push();
+    rotateZ(angle);
+    rotateX(angle);
+    torus(700, 10);
+    pop();
+
+    push();
+    rotateZ(angle*-1);
+    rotateX(angle*-1);
+    torus(550, 15);
+    pop();
+
+    push();
+    rotateZ(angle*-1);
+    rotateY(angle*-0.2)
+    rotateX(angle*-1);
+    torus(550, 15);
+    pop();
+
+    push();
+    rotateZ(angle*-0.12);
+    torus(800, 18, 90);
+    pop();
+
+pop();
+
+    push();
+    translate(0, -100, -50);
+    rotateX(radians(85));
+    torus(810,15);
+pop();
+
+    angle += 0.03
+}
+//perspective(fov, aspect, near, far)
+//camera(0, 0, (height/2) / tan(PI/6), 0, 0, 0, 0, 1, 0)
+
+function centerMoving()
+{
+    if(tY >= -100 || tY <= -350)
+    {
+       movement *= -1;
+    }
+    tY += movement;
+}
+
+
+function windowResized()
+{
+    resizeCanvas(windowWidth, windowHeight);
+}
+
+    </script>
+
+</head>
+
+</html>

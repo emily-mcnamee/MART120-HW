@@ -9,6 +9,8 @@ The center sphere will be a large human eye, the iris moving around. The sphere 
 
 I would also like to add four wing-like structures to the piece, either added in as drawn images through photoshop or drawn in p5.js. They will also be animated to move with the center sphere.
 
-There will be use of the WEBGL code for camera(), translate(), perspective(), ambientLight(), pointLight(), specularMaterial(), torus(), and sphere()
+Using WEBGL I am also going to edit the perspective of the piece to make it seem that the camera is looking up at the object, to give off that feel that the object is obscenely giant compared to the viewer.
 
-I am already in the process of learning WEBGL through multiple tutorials on youtube
+There will be use of the WEBGL code such as rotateX(), rotateY(), rotateZ(), camera(), translate(), perspective(), ambientLight(), pointLight(), specularMaterial(), torus(), and sphere()
+
+I am already in the process of learning WEBGL through multiple tutorials on youtube, included in this Proposal is the very rough draft of my project. I plan to do at least 3-4 hours a day working on this final until its due date on May 5th 11:55 PM. 
