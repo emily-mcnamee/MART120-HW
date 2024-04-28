@@ -3,7 +3,7 @@ For my final project, I would like to create an "animated" visualization of what
 This project will be focusing mainly on the 3D animation aspect of p5, using WEBGL
 This projct will be using 3D animations and shapes such as spheres and toruses. There will also be animation of ellipses, and use of arrays.
 
-As shown in the very rough sketch included in this proposal, the project will have a sphere in the center, with multiple toruses encircling the middle, along with perhaps ringed arrays of ellipses. These will act as the rings of gold and eyes that "biblically accurate thrones" are portrayed to have; the ellipses will be drawn to appear as eyes, and the toruses will be drawn as gold rings, some toruses may also have a layer of ellipses on top of them to give off the impression of a literal ring of eyes. 
+As shown in the very rough sketch included in this proposal, the project will have a sphere in the center, with multiple toruses encircling the middle, along with perhaps ringed arrays of ellipses. These will act as the rings of gold and eyes that "biblically accurate thrones" are portrayed to have; the ellipses will be drawn to appear as eyes, and the toruses will be drawn as gold rings, some toruses may also have a layer of ellipses on top of them to give off the impression of a literal ring of eyes. (If I can figure out how to make a three-dimentional array, that is. This is just an idealistic concept)
 
 The center sphere will be a large human eye, the iris moving around. The sphere may be animated to drift up and down, as long as the torus and arrays can be animated to move along with it. 
 
