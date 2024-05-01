@@ -1,0 +1,251 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
+
+    <script>
+        var movement = 1;
+        var movementB = 1;
+        var angle = 0;
+        var tY = -50;
+        var tY2 = -10;
+
+function setup() {
+    var cnv = createCanvas(windowWidth, windowHeight, WEBGL);
+    var x = (windowWidth - width) / 2;
+    var y = (windowHeight - height) / 2;
+    cnv.position(x, y);
+    
+}
+
+function draw()
+{
+    background(80);
+    centerMoving();
+    lights();
+    ortho();
+    //orbitControl();
+    camera(5, 250, (height/2) / tan(PI/6), 0, 150, 100, 0, 100, 0);
+
+   drawEye();
+   drawPupil();
+
+push();
+    //ambientLight(247, 202, 85);
+    pointLight(150,150,150, 0, -500, 325);
+    directionalLight(225,165,0, 0, 200, -200)
+    
+    push();
+        noStroke();
+        specularMaterial(225,192,0);
+
+        //Put translate() BEFORE rotate 
+
+        //Sphere+Ring Coords
+        push();
+         translate(0, tY, -50);
+
+            push();
+            fill(247, 202, 85);
+            sphere(110);
+            pop();     
+        
+
+            //First wheel
+
+            push();
+             rotateX(angle*1);   
+             rotateX(radians(50));
+             rotateY(radians(50));
+             fill(0);
+             torus(166, 5, 20);
+            pop();   
+
+            push();
+             rotateX(angle*1);   
+             rotateX(radians(50));
+             rotateY(radians(50));
+             torus(168, 6, 20);
+            pop();   
+
+            //Second Wheel
+            
+            push();
+             rotateY(angle*-1);
+             rotateX(radians(87));
+             rotateY(radians(50));
+             fill(0);
+             torus(188, 8, 20);
+            pop();
+
+            push();
+             rotateY(angle*-1);
+             rotateX(radians(87));
+             rotateY(radians(50));
+             torus(190, 9, 20);
+            pop();
+
+            //Third Wheel
+            push();
+             rotateY(angle*2);
+             rotateX(angle*1.8);
+             rotateX(radians(90));
+             rotateY(radians(-45));
+             fill(0);
+             torus(198, 11, 20);
+            pop();
+
+            push();
+             rotateY(angle*2);
+             rotateX(angle*1.8);
+             rotateX(radians(90));
+             rotateY(radians(-45));
+             torus(200, 12, 20);
+            pop();
+
+        pop();
+
+       
+
+           
+        //Outer Thick ring coordinates
+        push();
+         translate(0, -180, -50);
+            //1
+
+            push();
+            fill(247, 142, 85);
+             torus(523, 14, 50);
+            pop();
+
+            /*/push();
+             torus(525, 15, 50);
+            pop();/*/
+
+            
+            push();
+             rotateZ(angle*0.12);
+                //2
+                push();
+                 rotateX(radians(87));
+                 rotateY(radians(-45));
+                 fill(0);
+                 torus(798,11,50);
+                pop();
+
+                push();
+                 rotateX(radians(87));
+                 rotateY(radians(-45));
+                 torus(800,12,50);
+                pop();
+                    
+                //3
+
+                push();
+                 rotateX(radians(87));
+                 rotateY(radians(50));
+                 fill(0);
+                 torus(798, 11, 50);
+                pop();
+
+                push();
+                 rotateX(radians(87));
+                 rotateY(radians(50));
+                 torus(800, 12, 50);
+                pop();
+
+            pop();
+            
+            //Skinny Outer ring coords
+
+            push();
+                rotateX(angle);
+                rotateX(radians(85));
+                fill(247, 142, 85);
+                torus(798, 6);
+            pop();
+
+            push();
+                rotateX(angle);
+                rotateX(radians(85));
+                torus(790, 6);
+            pop();
+        
+
+        pop();
+
+    pop();
+
+pop();
+
+/*/planes
+push();
+translate(0,400,0);
+rotateX(HALF_PI);
+fill(0);
+plane(1900,1900);
+pop();/*/
+
+    angle += 0.02
+}
+//perspective(fov, aspect, near, far)
+//camera(0, 0, (height/2) / tan(PI/6), 0, 0, 0, 0, 1, 0)
+function drawPupil()
+{
+    push();
+    noStroke();
+    translate(0,tY,60)
+
+        push();
+        translate(0,45,10)
+        ambientMaterial(225,0,0);
+        ellipsoid(19,26);
+        pop();
+
+        push();
+        translate(0,49,20)
+        fill(139,0,0);
+        ellipsoid(15,22);
+        pop();
+
+        push();
+        translate(0.5,55,45);
+        fill(0);
+        sphere(8);
+        pop(); 
+
+    pop();    
+}
+function drawEye()
+{
+    push();
+        noStroke();
+        translate(0, tY, 55);
+
+     push();
+     ellipsoid(20,95);
+     pop();
+
+    pop();
+}
+
+function centerMoving()
+{
+    if(tY >= 0 || tY <= -250)
+    {
+       movement *= -1;
+    }
+    tY += movement;
+}
+
+
+function windowResized()
+{
+    resizeCanvas(windowWidth, windowHeight);
+}
+
+    </script>
+
+</head>
+
+</html>
