@@ -3,7 +3,7 @@ let shape;
 let r1 =25;
 
 function setup() {
-  createCanvas(800, 800,WEBGL);
+  createCanvas(800, 800, WEBGL);
   shape = buildGeometry(createShape);
 }
 
@@ -25,6 +25,4 @@ function draw()
     rotateZ(radians(90));
     circle(x,y,35);
   }
-    
-
 }
