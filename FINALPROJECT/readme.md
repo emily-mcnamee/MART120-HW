@@ -1,0 +1,29 @@
+The final project had started off of the initial final proposal sketch submitted, with the addition of yellow specular material and the proper lighting inroduced.
+
+Many toruses were added, creating a sphere-like structure encasing the eye. The middle torsuses were removed for the substitution of one thick small torus encircling the two thinnest toruses around the eye.
+
+Many different torus structures and speeds were cycled through the creation process, eventually the final structure was decided as too many toruses distracted and disoriented the view, and while all animation was controlled by the single variable "angle", all rotations were multiplied by decimals to slow them down and give the scene some breathing room.
+
+While in the process of trying to create the circular array of spheres, I found out that the function "lights();" created a much cleaner lighting effect than multiple spotlights placed around the drawing.
+
+The plan to create wings was scrapped as it was taking too much time away from the project as a whole.
+
+ A particle effect was considered for the final project, however this was scrapped due to how much time the project demanded by itself.
+
+The pupil of the eye is created out of mulitple ellipsoids layered on top of each other. This made the distroting of the perspective difficult to do as the field of view of the eye counted on not being able to see the layers past the 2nd dimension. Instead I increased the size of the drawing itself and positioned many of the toruses to be above the field of view, giving off the illusion that the angel depicted was presenting in a grand scale.
+
+Trying out perspective(); and camera(); was extremely puzzling even with a p5 cheat sheet and reference guide, I couldn't grasp exactly how each number coorelated to change the scene. Having to balance nine numbers for camera(); was extremely complicated, so while I did edit the default field of view, it is miniscule compared to what I had initially planned. Perspective(); itself kept breaking my livesite even in its default state, so I had chosen to give up on that endevear. 
+
+orbitControl(); was also heavily considered, and I did use it plenty of times during the creative process, but as mentioned above looking at the eye in different angles broke the suspension of disbelief with its form, so a fixed camera angle was best for this project.
+
+Much of this project was spent on lighting and perspective; trying to figure out how to get the materials to interact with the lighting inthe way I wanted and chosing the colors to interact with was difficult as I felt a straight yellow/white combination was too harsh to look at. Using the lights(); solved much of this problem as it simply turns on shading and highlight effect regardless of their material/ fill color, but then I had the problem of the spotlights I had previously implemented being far too bright and needing to be adjusted/removed entirely. 
+
+By layering a second torus of black specular material right under a white fill torus, I created an interesting look to the shading inside each ring. I chose a white fill torus to be over the specular material as the yellow specular material is extremely vivid and distracting if too much was on the screen. The black specular material felt also grounding between the bright yellow and white highlights.
+
+The most difficult part of the project was creating the array of spheres in a torus-shape; it required learning the cos and sin functions along with theta, which took a very long time to transfer from two-dimensional vertex shaping into using three-dimensional shapes to create the 360 degree radius. Even after I had finally figured out how to create the circular array, attempting to rotate the x,y,z axis after is near impossible without ruining the shape itself. Attempting to use the array function to increase the number of spheres within the array only lead to the livesite crashing, so while I do think it could be possible to create a circular array with more than seven spheres, I failed to find the formula for it.
+
+ Creating the circular array function was homebrewed by myself; I did try to look up how-to guides on creating a 3-dimensional circular array as I thought it would be a popular 3-d model to make; this assumption was incorrect. I had only managed to find out the formula of the cos()sin(theta) formula with the help of a p5 mathematics forum that discussed how to loop the movement of shapes in a circular pattern, along with a video that discussed the createShape function within p5. I did find an online 180 degree torus band model that I would have no doubt used in my final, however the model's author chose to not let the model be downloadable and thus only the final render was visable. It was a dissapointment realizing that I wouldn't be able to impliment the circle array the way I imagined it, however I am happy that I had puzzled out the coding long enough to be able to create what the final contains now. 
+
+ Trying to animate the cirle array was a whole beast of its own, however. Trying to rotate it was nothing like rotating a regular 3-d shape like the multiple toruses I rotated. It's animation seemed to stick to one point on the drawing, so while I think I could've figured out how to translate and animate it the way I wanted it if it was the main part of the project, I couldn't compromise to spend any more time ironing out the code than the few days it took to figure out the circle array formula itself. 
+
+ Overall, I am pleased with my final. I believe I have at least met the expectations demanded for the final, as I took what I had learned over the course of this class and built off of my knowledge by evolving from 2-D to 3-D. Learning WEBGL to create my final was intesive yet very rewarding to me. 
