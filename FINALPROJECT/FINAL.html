@@ -10,7 +10,7 @@
         var tY = -50;
         var tY2 = -10;
         let shape;
-        let r1 = 230;
+        let r1 = 300;
 
 function setup() {
     var cnv = createCanvas(windowWidth, windowHeight, WEBGL);
@@ -29,14 +29,11 @@ function draw()
     ortho();
     //orbitControl();
     camera(5, 250, (height/2) / tan(PI/6), 0, 150, 100, 0, 100, 100);
-    //perspective(2 * atan(height / 2 / 800), width / height, 0.5 * 800, 10 * 800);
 
     drawEye();
     drawPupil();
-    //model(shape);
 
 push();
-    //ambientLight(247, 202, 85);
     pointLight(150,150,150, 0, -500, 325);
     directionalLight(225,165,0, 0, 200, -200)
 
@@ -54,10 +51,8 @@ push();
             fill(247, 202, 85);
             sphere(110);
             pop();     
-        
 
             //First wheel
-
             push();
              rotateX(angle*1);   
              rotateX(radians(50));
@@ -109,29 +104,6 @@ push();
             pop();
 
         pop();
-
-        push();
-
-        //translate(0,tY,0)
-        translate(-40,10,-50);
-        translate(0,tY,0);
-        rotateX(radians(40));
-        rotateY(radians(-120));
-        //rotateX(radians(87));
-        fill(0);
-        torus(300, 13, 30);
-        fill(225);
-        torus(320, 15, 30);
-
-        pop();
-        
-        /*/push();
-         translate(-80,10,-50);
-         rotateX(radians(70));
-         //rotateY(angle);
-         //rotateZ(angle);
-         model(shape);
-        pop();/*/
        
         //Outer Thick ring coordinates
         push();
@@ -140,17 +112,10 @@ push();
             //1
 
             push();
-
             fill(247, 142, 85);
             torus(523, 14, 50);
-             
             pop();
 
-            /*/push();
-             torus(525, 15, 50);
-            pop();/*/
-
-            
             push();
              rotateZ(angle*0.12);
                 //2
@@ -204,19 +169,16 @@ push();
 
     pop();
 
-pop();
+    push();
+    translate(0,tY,0);
+    rotateZ(angle*0.25);
+    model(shape);
+    pop();
 
-/*/planes
-push();
-translate(0,400,0);
-rotateX(HALF_PI);
-fill(0);
-plane(1900,1900);
-pop();/*/
+pop();
 
     angle += 0.02
 }
-//perspective(fov, aspect, near, far)
 
 function createShape()
 {
@@ -225,7 +187,14 @@ function createShape()
     let xA = r1*cos(theta);
     let yA = r1*sin(theta);
     translate(xA,yA);
-    sphere(28);
+    ambientMaterial(225);
+    translate(-40,-60,-40);
+    //pupils
+    fill(139,0,0);
+    ellipsoid(-15, 26, -30);
+    //eyes
+    fill(225);
+    sphere(25);
   }
 }
 
